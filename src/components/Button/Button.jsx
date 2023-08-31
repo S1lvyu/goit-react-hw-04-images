@@ -1,13 +1,12 @@
 import React from 'react';
 import styles from './Button.module.css';
-import PropTypes from 'prop-types';
-export default function Button({ onClick }) {
+
+import { useSearchImageContext } from 'store/SearchImageContext';
+export default function Button() {
+  const { increasePage } = useSearchImageContext();
   return (
-    <button className={styles.button} onClick={onClick}>
+    <button className={styles.button} onClick={increasePage}>
       Load More
     </button>
   );
 }
-Button.propTypes = {
-  onClick: PropTypes.func.isRequired,
-};
